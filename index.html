@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: turquoise;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        header h1 {
+            font-size: 2rem;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .quiz-questions {
+            display: none;
+        }
+
+
+        .quiz-intro {
+            text-align: center;
+        }
+
+        .quiz-intro h2 {
+            font-size: 1.5rem;
+        }
+
+        .start-button {
+            background-color: #333;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <section class="quiz-intro" id="quiz-intro">
+            <h2>Bem-vindo ao nosso Quiz!</h2>
+            <p>Teste seu conhecimento sobre a história dos livros</p>
+            <button id="start-button" class="ui basic blue button"><i class="icon play"></i>Começar</button>
+        </section>
+
+        <section class="quiz-questions" id="question1">
+            <h2>Pergunta 1</h2>
+            <p>Qual é o primeiro livro mais conhecido da história?</p>
+            <div class="answers">
+                <button class="ui basic blue button" data-correct="false">Dom Quixote</button>
+                <button class="ui basic blue button" data-correct="true">Bíblia</button>
+                <button class="ui basic blue button" data-correct="false">Harry Potter</button>
+                <button class="ui basic blue button" data-correct="false">O Livro Vermelho</button>
+            </div>
+        </section>
+
+        <section class="quiz-questions" id="question2">
+            <h2>Pergunta 2</h2>
+            <p>Qual é o livro mais vendido na história da literatura brasileira?</p>
+            <div class="answers">
+                <button class="ui basic blue button" data-correct="true">Dona Flor e Seus Dois Maridos</button>
+                <button class="ui basic blue button" data-correct="false">Iracema</button>
+                <button class="ui basic blue button" data-correct="false">O Guarani</button>
+                <button class="ui basic blue button" data-correct="false">Macunaíma</button>
+            </div>
+        </section>
+
+        <section class="quiz-questions" id="question3">
+            <h2>Pergunta 3</h2>
+            <p>Quem é o autor de O Senhor dos Anéis?</p>
+            <div class="answers">
+                <button class="ui basic blue button" data-correct="false">J. K. Rowling</button>
+                <button class="ui basic blue button" data-correct="false">George R. R. Martin</button>
+                <button class="ui basic blue button" data-correct="false">C. S. Lewis</button>
+                <button class="ui basic blue button" data-correct="true">J. R. R. Tolkien</button>
+            </div>
+        </section>
+
+        <section class="quiz-questions" id="question4">
+            <h2>Pergunta 4</h2>
+            <p>Qual é o livro mais vendido no Brasil?</p>
+            <div class="answers">
+                <button class="ui basic blue button" data-correct="false">O Pequeno Príncipe</button>
+                <button class="ui basic blue button" data-correct="true">Harry Potter e a Pedra Filosofal</button>
+                <button class="ui basic blue button" data-correct="false">Bíblia</button>
+                <button class="ui basic blue button" data-correct="false">Crepúsculo</button>
+            </div>
+        </section>
+
+        <section class="quiz-questions" id="question5">
+            <h2>Pergunta 5</h2>
+            <p>Onde se passa a história de O Pequeno Príncipe?</p>
+            <div class="answers">
+                <button class="ui basic blue button" data-correct="false">No deserto do Saara</button>
+                <button class="ui basic blue button" data-correct="true">No espaço sideral</button>
+                <button class="ui basic blue button" data-correct="false">Em um planeta distante</button>
+                <button class="ui basic blue button" data-correct="false">Em um planeta próximo da Terra</button>
+            </div>
+        </section>
+
+        <section class="quiz-questions" id="question6">
+            <h2>Pergunta 6</h2>
+            <p>Quem é o autor(es) de Chapeuzinho Vermelho?</p>
+            <div class="answers">
+                <button class="ui basic blue button" data-correct="false">Lewis Carroll</button>
+                <button class="ui basic blue button" data-correct="false">Charles Perrault</button>
+                <button class="ui basic blue button" data-correct="false">Hans Christian Andersen</button>
+                <button class="ui basic blue button" data-correct="true">Irmãos Grimm</button>
+            </div>
+        </section>
+
+        <section class="quiz-questions" id="question7">
+            <h2>Pergunta 7</h2>
+            <p>Qual é o livro infantil brasileiro mais conhecido?</p>
+            <div class="answers">
+                <button class="ui basic blue button" data-correct="false">O Pequeno Príncipe</button>
+                <button class="ui basic blue button" data-correct="false">O Menino Maluquinho</button>
+                <button class="ui basic blue button" data-correct="true">Sítio do Pica-Pau Amarelo</button>
+                <button class="ui basic blue button" data-correct="false">As Crônicas de Nárnia</button>
+            </div>
+        </section>
+
+        <section class="quiz-questions" id="question8">
+            <h2>Pergunta 8</h2>
+            <p>Qual é o autor brasileiro mais conhecido por seus livros infantis?</p>
+            <div class="answers">
+                <button class="ui basic blue button" data-correct="false">Ziraldo</button>
+                <button class="ui basic blue button" data-correct="false">Ruth Rocha</button>
+                <button class="ui basic blue button" data-correct="false">Chico Buarque</button>
+                <button class="ui basic blue button" data-correct="true">Monteiro Lobato</button>
+            </div>
+        </section>
+
+        <section class="quiz-questions" id="question9">
+            <h2>Pergunta 9</h2>
+            <p>Qual é o livro de terror mais antigo?</p>
+            <div class="answers">
+                <button class="ui basic blue button" data-correct="false">O Necronomicon, de Abdul Alhazred</button>
+                <button class="ui basic blue button" data-correct="true">O Castelo de Otranto, de Horace
+                    Walpole</button>
+                <button class="ui basic blue button" data-correct="false">Frankenstein, de Mary Shelley</button>
+                <button class="ui basic blue button" data-correct="false">Drácula, de Bram Stoker</button>
+            </div>
+        </section>
+        <section class="quiz-questions" id="question10">
+            <h2>Pergunta 10</h2>
+            <p>Qual é o livro mais longo já escrito?</p>
+            <div class="answers">
+                <button class="ui basic blue button" data-correct="false">O Senhor dos Anéis</button>
+                <button class="ui basic blue button" data-correct="false">Os Miseráveis</button>
+                <button class="ui basic blue button" data-correct="true">Guerra e Paz</button>
+                <button class="ui basic blue button" data-correct="false">Moby Dick</button>
+            </div>
+        </section>
+
+        <section class="quiz-questions" id="question11">
+            <h2>Resultados do Quiz</h2>
+            <p id="score">X</p>
+            <p></p>
+            <ul id="results-list">
+                <!-- Todas as perguntas respondidas serão adicionadas aqui com JavaScript -->
+            </ul>
+        </section>
+
+
+
+
+    </main>
+    <script>
+        const questionIds = [
+            "question1",
+            "question2",
+            "question3",
+            "question4",
+            "question5",
+            "question6",
+            "question7",
+            "question8",
+            "question9",
+            "question10",
+            "question11"
+        ];
+
+        const startButton = document.getElementById("start-button");
+
+        const correctAnswers = [
+            "2",
+            "1",
+            "4",
+            "2",
+            "2",
+            "4",
+            "3",
+            "4",
+            "2",
+            "3"
+        ];
+
+        const resultsList = document.getElementById("results-list");
+        const scoreDisplay = document.getElementById("score");
+
+        let currentQuestion = -1;
+        let userAnswers = [];
+
+        questionIds.forEach((questionId) => {
+            document.getElementById(questionId).style.display = "none";
+        });
+
+        startButton.addEventListener("click", () => {
+            if (currentQuestion === -1) {
+                document.querySelector(".quiz-intro").style.display = "none";
+
+                showNextQuestion();
+            }
+        });
+
+        function showNextQuestion() {
+            if (currentQuestion >= 0) {
+                document.getElementById(questionIds[currentQuestion]).style.display = "none";
+            }
+            currentQuestion++;
+            if (currentQuestion < questionIds.length - 1) {
+                document.getElementById(questionIds[currentQuestion]).style.display = "block";
+            } else {
+                document.getElementById(questionIds[currentQuestion]).style.display = "block";
+                displayResults();
+            }
+        }
+
+        questionIds.forEach((questionId, index) => {
+            const question = document.getElementById(questionId);
+            if (index < questionIds.length - 1) {
+                const buttons = question.querySelectorAll("button");
+
+                buttons.forEach((button) => {
+                    button.addEventListener("click", () => {
+                        const answerIndex = Array.from(button.parentNode.children).indexOf(button) + 1;
+                        userAnswers.push(answerIndex);
+                        showNextQuestion();
+                    });
+                });
+            }
+        });
+
+        function displayResults() {
+            let score = 0;
+            let resultHtml = "";
+
+            userAnswers.forEach((userAnswer, index) => {
+                const questionId = questionIds[index];
+                const questionElement = document.getElementById(questionId);
+                const question = questionElement.querySelector("h2").textContent;
+                const answers = Array.from(questionElement.querySelectorAll("button"));
+                const correctAnswer = answers.find((answer) => answer.getAttribute("data-correct") === "true").textContent;
+                const userSelectedIndex = userAnswer - 1;
+                const userSelectedAnswer = answers[userSelectedIndex].textContent;
+
+                if (userAnswer == correctAnswers[index]) {
+                    score++;
+                }
+
+                resultHtml += `<p>${question}</p>`;
+                resultHtml += "<ul>";
+                answers.forEach((answer, i) => {
+                    resultHtml += "<li";
+                    if (i === userSelectedIndex) {
+                        resultHtml += " class='user-selected'";
+                    }
+                    if (answer.getAttribute("data-correct") === "true") {
+                        resultHtml += " class='correct'";
+                    }
+                    resultHtml += `<b>${answer.textContent}</b></li>`;
+                });
+                resultHtml += `<br><b>Resposta correta: ${correctAnswer}</b>`;
+                resultHtml += "</ul>";
+            });
+
+            scoreDisplay.textContent = `Você acertou ${score} de ${questionIds.length} perguntas.`;
+
+            if (userAnswers.length > 0) {
+                
+                resultsList.innerHTML = resultHtml;
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+        function displayResults() {
+    let score = 0;
+    let resultHtml = "";
+
+    userAnswers.forEach((userAnswer, index) => {
+        const questionId = questionIds[index];
+        const questionElement = document.getElementById(questionId);
+        const question = questionElement.querySelector("p").textContent;
+        const answers = Array.from(questionElement.querySelectorAll("button"));
+        const correctAnswer = answers.find((answer) => answer.getAttribute("data-correct") === "true").textContent;
+        const userSelectedIndex = userAnswer - 1;
+        const userSelectedAnswer = answers[userSelectedIndex].textContent;
+
+        if (userAnswer == correctAnswers[index]) {
+            score++;
+        }
+
+        resultHtml += `<p><strong>Pergunta:</strong> ${question}</p>`;
+        resultHtml += "<ul>";
+
+        answers.forEach((answer, i) => {
+            resultHtml += "<li>";
+            if (i === userSelectedIndex) {
+                resultHtml += `<strong>Sua Resposta:</strong> ${userSelectedAnswer}`;
+            }
+            if (i === userSelectedIndex && answer.getAttribute("data-correct") === "true") {
+                resultHtml += ` (Resposta Correta)`;
+            } else if (answer.getAttribute("data-correct") === "true") {
+                resultHtml += `<strong>Resposta Correta:</strong> ${correctAnswer}`;
+            }
+            resultHtml += "</li>";
+        });
+
+        resultHtml += "</ul>";
+    });
+
+    scoreDisplay.textContent = `Você acertou ${score} de ${questionIds.length - 1} perguntas.`;
+
+    if (userAnswers.length > 0) {
+      
+        resultsList.innerHTML = resultHtml;
+    }
+}
+
+
+    </script>
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.js"></script>
+
+</body>
+
+
+</html>
